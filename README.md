@@ -5,12 +5,12 @@ regarding the load average of the host that it is running on. It then stores it 
 The python script also verifies the existence of the required database in InfluxDB. Credentials are hard coded. 
 
 Grafana needs to be configured for the data-source. Docker resolves http://influxdb:8086 to the host internally. The .env file contains the credentials required out of the box to access both
-Grafana and InfluxDB. It is possible to have a data-source file loaded for Grafana.
+Grafana and InfluxDB. It is possible to have a pre-defined configuration file loaded for Grafana.
 
 Room for improvement:
 
 Resource constraint didn't seem to do much but are set in the docker-compose to what they should ideally be at. Did not notice an impact when the actual hosts were running. Attempted to add dedicated
-subnet and IPV4 addresses but would require additional application level configuration to be useful. CIDR range was set to /28 due to small scale.
+subnet and IPV4 addresses but would require additional application level configuration to be useful. CIDR range was set to /28 due to small scale. 
 
 Machine that these were tested on:
 
