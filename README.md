@@ -8,11 +8,14 @@ Grafana needs to be configured for the data-source. Docker resolves http://influ
 Grafana and InfluxDB. It is possible to have a data-source file loaded for Grafana.
 
 Room for improvement:
+
 Resource constraint didn't seem to do much but are set in the docker-compose to what they should ideally be at. Did not notice an impact when the actual hosts were running. Attempted to add dedicated
 subnet and IPV4 addresses but would require additional application level configuration to be useful. CIDR range was set to /28 due to small scale.
 
 Machine that these were tested on:
+
 Intel Core i5-8600k @ 3.60 GHz
+
 8 GB RAM
 
 The docker-compose sets two volumes for each of the applications. 
