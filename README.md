@@ -4,8 +4,7 @@ This repository contains a docker-compose to spin up 3 instances. One is Grafana
 regarding the load average of the host that it is running on. It then stores it temporarily in a local file until it accumulates a set amount of data. Then it deposits the data into InfluxDB.
 The python script also verifies the existence of the required database in InfluxDB. Credentials are hard coded. 
 
-Grafana needs to be configured for the data-source. Docker resolves http://influxdb:8086 to the host internally. The .env file contains the credentials required out of the box to access both
-Grafana and InfluxDB. It is possible to have a pre-defined configuration file loaded for Grafana.
+Grafana needs to be configured for the data-source. Docker resolves http://influxdb:8086 to the host internally.  It is possible to have a pre-defined configuration file loaded for Grafana.
 
 Room for improvement:
 
