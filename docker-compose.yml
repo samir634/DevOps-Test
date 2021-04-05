@@ -1,0 +1,47 @@
+version: '3'
+services:
+  pythonappbuild:
+    build: .
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 50M
+        reservations:
+          cpus: '0.01'
+          memory: 10M
+    depends_on:
+      - influxdb
+  influxdb:
+    image: "influxdb:latest"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 100M
+        reservations:
+          cpus: '0.01'
+          memory: 20M
+    ports:
+      - "8086:8086"
+    volumes:
+     - influxdb-storage:/var/lib/influxdb
+  grafana:
+    image: "grafana/grafana"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 50M
+        reservations:
+          cpus: '0.01'
+          memory: 15M
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    depends_on:
+      - influxdb
+volumes:
+  grafana-storage:
+  influxdb-storage:
